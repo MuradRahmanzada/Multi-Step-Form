@@ -56,21 +56,8 @@ export const Description = styled.p`
 
 export const BillingGroup = styled.div`
   display: flex;
+  justify-content: center;
   gap: 8px;
 `;
 
-export const BillingButton = styled.button`
-  background-color: var(--alabaster);
-  padding: 12px;
-  border: 1px solid var(--light-gray);
-  color: var(--cool-gray);
-  border-radius: 8px;
-
-  ${({ isSelected }) =>
-    isSelected &&
-    css`
-      color: var(--purplish-blue);
-      background-color: var(--alabaster);
-      border-color: var(--purplish-blue);
-    `}
-`;
+export const BillingToggleText = styled.span``

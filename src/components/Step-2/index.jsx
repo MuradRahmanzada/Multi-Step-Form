@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Step from "../Step";
 import FormJson from "../../data/form.json";
+import { Switch } from "antd";
 import {
   Icons,
   DEFAULT_PLAN,
@@ -14,18 +15,25 @@ const { step2 } = FormJson;
 
 const Step2 = ({ onStepSubmit, formData, ...props }) => {
   const [plan, setPlan] = useState(formData.step2.plan ?? DEFAULT_PLAN);
-  const [billingType, setBillingType] = useState(formData.step2.billingType ?? DEFAULT_BILLING_TYPE);
+  const [billingType, setBillingType] = useState(
+    formData.step2.billingType ?? DEFAULT_BILLING_TYPE
+  );
 
   const changePlan = (newPlan) => {
     setPlan(newPlan);
   };
 
-  const changeBillingType = (newBillingType) => {
-    setBillingType(newBillingType);
+  const changeBillingType = () => {
+    if (billingType === MONTHLY) {
+      setBillingType(YEARLY);
+    } else {
+      setBillingType(MONTHLY);
+    }
   };
 
-  const onSubmit = () => {
+  const isSelected = () => {};
 
+  const onSubmit = () => {
     onStepSubmit("step2", "step3", {
       billingType,
       plan,
@@ -53,20 +61,9 @@ const Step2 = ({ onStepSubmit, formData, ...props }) => {
           ))}
         </S.RadioGroup>
         <S.BillingGroup>
-          <S.BillingButton
-            type="button"
-            onClick={() => changeBillingType(MONTHLY)}
-            isSelected={billingType === MONTHLY}
-          >
-            Monhtly
-          </S.BillingButton>
-          <S.BillingButton
-            type="button"
-            onClick={() => changeBillingType(YEARLY)}
-            isSelected={billingType === YEARLY}
-          >
-            Yearly
-          </S.BillingButton>
+          <S.BillingToggleText>Monthly</S.BillingToggleText>
+          <Switch onClick={changeBillingType}/>
+          <S.BillingToggleText>Yearly</S.BillingToggleText>
         </S.BillingGroup>
       </S.Step2>
     </Step>
