@@ -62,7 +62,7 @@ const Step2 = ({ onStepSubmit, formData, ...props }) => {
         </S.RadioGroup>
         <S.BillingGroup>
           <S.BillingToggleText>Monthly</S.BillingToggleText>
-          <Switch onClick={changeBillingType}/>
+          <Switch onClick={changeBillingType} style={{backgroundColor: "var(--marine-blue)"}}/>
           <S.BillingToggleText>Yearly</S.BillingToggleText>
         </S.BillingGroup>
       </S.Step2>
