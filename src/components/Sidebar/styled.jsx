@@ -5,9 +5,9 @@ import SidebarBg from "/assets/bg-sidebar-desktop.svg";
 export const Sidebar = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 36px;
   width: 35%;
-  padding: 24px;
+  padding: 36px;
   border-radius: 8px;
   background-image: url(${SidebarBg});
   background-repeat: no-repeat;
