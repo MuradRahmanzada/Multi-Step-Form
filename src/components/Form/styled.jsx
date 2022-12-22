@@ -5,8 +5,8 @@ export const MultiStepFrom = styled.div`
   gap: 12px;
   padding: 12px;
   background-color: var(--white);
-  min-height: 60vh;
-  width: 50vw;
+  height: 80vh;
+  width: 100vh;
   box-shadow: 0 5px 10px 10px rgba(0, 0, 0, 0.05);
   border-radius: 12px;
 

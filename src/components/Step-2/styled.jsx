@@ -58,6 +58,10 @@ export const BillingGroup = styled.div`
   display: flex;
   justify-content: center;
   gap: 8px;
+  padding: 8px;
+  height: 50px;
+  margin-top: 24px;
+  background-color: var(--magnolia);
 `;
 
 export const BillingToggleText = styled.span``
